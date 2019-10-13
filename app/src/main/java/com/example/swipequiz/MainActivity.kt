@@ -62,10 +62,28 @@ class MainActivity : AppCompatActivity() {
                 val position = viewHolder.adapterPosition
                 questionAdapter.notifyDataSetChanged()
 
-                if (position == 0 && direction == 8 ){
+                if (position == 0 && direction == ItemTouchHelper.RIGHT ){
                     Toast.makeText(this@MainActivity, getString(R.string.correct), Toast.LENGTH_LONG).show()
-                } else {
+                } else if (position == 0 && direction == ItemTouchHelper.LEFT) {
                     Toast.makeText(this@MainActivity, getString(R.string.incorrect), Toast.LENGTH_LONG).show()
+                }
+
+                if (position == 1 && direction == ItemTouchHelper.RIGHT ){
+                    Toast.makeText(this@MainActivity, getString(R.string.correct), Toast.LENGTH_LONG).show()
+                } else if (position == 1 && direction == ItemTouchHelper.LEFT) {
+                    Toast.makeText(this@MainActivity, getString(R.string.incorrect), Toast.LENGTH_LONG).show()
+                }
+
+                if (position == 2 && direction == ItemTouchHelper.RIGHT ){
+                    Toast.makeText(this@MainActivity, getString(R.string.incorrect), Toast.LENGTH_LONG).show()
+                } else if (position == 2 && direction == ItemTouchHelper.LEFT) {
+                    Toast.makeText(this@MainActivity, getString(R.string.correct), Toast.LENGTH_LONG).show()
+                }
+
+                if (position == 3 && direction == ItemTouchHelper.RIGHT ){
+                    Toast.makeText(this@MainActivity, getString(R.string.incorrect), Toast.LENGTH_LONG).show()
+                } else if (position == 3 && direction == ItemTouchHelper.LEFT) {
+                    Toast.makeText(this@MainActivity, getString(R.string.correct), Toast.LENGTH_LONG).show()
                 }
 
                 questionAdapter.notifyItemChanged(viewHolder.adapterPosition)
